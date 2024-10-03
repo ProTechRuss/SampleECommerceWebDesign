@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Page Scrollable Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .page {
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page1 {
+            background-image: url('hero-bg-img.jpg');
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            color: black;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .sign-in-button {
+            background-color: rgb(32, 178, 120);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .sign-in-button:hover {
+            background-color: darkgreen;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            width: calc(100% - 40px);
+            max-width: 600px;
+            transform: translateY(-50%);
+            text-align: left;
+            color: white;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin-left: 80px;
+            color: black;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            margin-left: 80px;
+            color: black;
+        }
+
+        .learn-more-button {
+            background-color: rgb(32, 178, 120);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            display: block;
+            margin-left: 80px;
+        }
+
+        .learn-more-button:hover {
+            background-color: darkgreen;
+        }
+
+        .right-side-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            text-align: right;
+            margin-right: 100px;
+        }
+
+        .right-side-image img {
+            width: 90%;
+            height: auto;
+        }
+
+        .page2 {
+            background-image: url('sec3-bg-img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .header-container {
+            position: absolute;
+            color: black;
+            text-align: center;
+            top: 20px;
+            width: 100%;
+        }
+
+        .header-container h1 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .header-container h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .circle {
+            margin-left: 80px;
+            margin-right: 80px;
+            
+        }
+
+        .circles-container {
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 300px;
+            margin: 20px;
+        }
+        .circles-container p{
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .row:first-child {
+            margin-bottom: 20px;
+        }
+
+        .show-more-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .show-more-button {
+            background-color: rgb(32, 178, 120);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .show-more-button:hover {
+            background-color: darkgreen;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page page1">
+        <nav>
+            <div class="logo">
+                <img src="Shipcoo-logo.png" alt="Top Left Image">
+            </div>
+            <a href="#about-us">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="#integrations">Integrations</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+            <button class="sign-in-button">SIGN IN</button>
+        </nav>
+        <div class="content">
+            <h1>Global Fulfillment Partner for eCommerce and DTC brands</h1>
+            <p>Shipcoo is .</p>
+            <button class="learn-more-button">LEARN MORE</button>
+        </div>
+        <div class="right-side-image">
+            <img src="hero-Infographics-img.png" alt="Half right image">
+        </div>
+    </div>
+    <div class="page page2">
+        <div class="header-container">
+            <h1>7 Reasons</h1>
+            <h2>Why you should pick Shipcoo.</h2>
+        </div>
+        <div class="circles-container">
+            <div class="row">
+                <div class="circle"> <img src="log-icon.png"><p>Free Saas Solution</p></div>
+                <div class="circle"> <img src="low-icon.png"><p>Lower taxes & duties</p></div>
+                <div class="circle"> <img src="AI-icon.png"><p>Driven by AI</p></div>
+                <div class="circle"> <img src="save-icon.png"><p>Save money on shipping</p></div>
+            </div>
+            <div class="row">
+                <div class="circle"> <img src="global.png"><p>Global converage</p></div>
+                <div class="circle"> <img src="minimize-icon.png"><p>Minimize inventory</p></div>
+                <div class="circle"> <img src="supermarket-icon.png"><p class="p1">Expertise on Online businesses</p></div>
+            </div>
+            <div class="show-more-container">
+                <button class="show-more-button">SHOW MORE</button>
+            </div>
+        </div>
+        <div class="footer">
+            ©2020 by Shipcoo
+        </div>
+    </div>
+</body>
+</html>
